@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'devices',
-    # 'admin_dashboard',
+    'admin_dashboard',
     'django.contrib.sites', 
     'allauth', 
     'allauth.account', 
@@ -159,13 +159,25 @@ DATABASES = {
 }
 
 # Email configuration
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Your SMTP server address
-EMAIL_PORT = 587  # Your SMTP server port (587 is the default for SMTP with TLS)
-EMAIL_USE_TLS = True  # Whether to use TLS (True by default)
-EMAIL_HOST_USER = 'artstraining.co.uk@gmail.com'
-EMAIL_HOST_PASSWORD = 'teoa fgdi draf suok'  #teoa fgdi draf suok
-DEFAULT_FROM_EMAIL = 'artstraining.co.uk@gmail.com'  # The default email address to use for sending emails
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'  # Your SMTP server address
+# EMAIL_PORT = 587  # Your SMTP server port (587 is the default for SMTP with TLS)
+# EMAIL_USE_TLS = True  # Whether to use TLS (True by default)
+# EMAIL_HOST_USER = 'artstraining.co.uk@gmail.com'
+# EMAIL_HOST_PASSWORD = 'teoa fgdi draf suok'  #teoa fgdi draf suok
+# DEFAULT_FROM_EMAIL = 'artstraining.co.uk@gmail.com'  # The default email address to use for sending emails
+# EMAIL_DEBUG = True
+
+# Email configuration
+
+
+EMAIL_HOST = 'smtp.hostinger.com'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True  # If your SMTP provider uses SSL
+EMAIL_PORT = 465  # SSL port
+EMAIL_HOST_USER = 'support@sterlingspecialisthospitals.com'
+EMAIL_HOST_PASSWORD = '123@Qwertyqwerty123'
+DEFAULT_FROM_EMAIL = 'support@sterlingspecialisthospitals.com'
 EMAIL_DEBUG = True
 
 
