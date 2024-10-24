@@ -150,13 +150,13 @@ WSGI_APPLICATION = 'phone_tracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swiftlookdb',
-        'USER': 'swiftlookdb_user',
-        'PASSWORD': 'i65E2SJtvbTziJRrLJ5x5LG71GApT9Hv',
-        'HOST': 'dpg-cs9ncbo8fa8c73cd88t0-a.oregon-postgres.render.com',
-        'PORT': '5432',  # Default PostgreSQL port
+        'NAME': 'swiftlookdb_5dud',
+        'USER': 'swiftlookdb_5dud_user',
+        'PASSWORD': 'HFUM7XjLnciljtFg9KELhWBDmYB0s6U1',
+        'HOST': 'dpg-csd2d6dumphs739c9dm0-a.oregon-postgres.render.com',
+        'PORT': '5432',  # default PostgreSQL port
         'OPTIONS': {
-            'sslmode': 'require',  # This ensures a secure connection
+            'sslmode': 'require',  # Use SSL connection if required
         },
     }
 }
