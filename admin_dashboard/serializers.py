@@ -7,7 +7,7 @@ from devices.models import Device
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ['email','phone','first_name', 'last_name']
+        fields = ['email','phone','first_name']
 
 
 class DeviceSerializer(serializers.ModelSerializer):
@@ -24,7 +24,7 @@ class CustomDeviceSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    is_active = serializers.BooleanField()
+    # is_active = serializers.BooleanField()
     devices = serializers.SerializerMethodField()
 
     class Meta:
