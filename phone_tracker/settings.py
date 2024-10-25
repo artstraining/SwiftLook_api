@@ -172,6 +172,16 @@ EMAIL_HOST_PASSWORD = '123@Qwertyqwerty@123'  # Your Hostinger email password
 DEFAULT_FROM_EMAIL = 'support@sterlingspecialisthospitals.com'  # Default sender email
 
 
+# # Email settings for GoDaddy
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtpout.secureserver.net'  # GoDaddy's SMTP server
+# EMAIL_PORT = 465  # GoDaddy uses port 465 for SSL
+# EMAIL_USE_SSL = True  # Enables SSL
+# EMAIL_HOST_USER = 'your_email@example.com'  # Replace with your GoDaddy email address
+# EMAIL_HOST_PASSWORD = 'your_password'  # Replace with your GoDaddy email password
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Default email for sending messages
+
+
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
