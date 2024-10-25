@@ -141,7 +141,7 @@ class ResetPasswordView(views.APIView):
             </html>
         '''
 
-        from_email = 'artstraining.co.uk@gmail.com'
+        from_email = 'ekenehanson@sterlingspecialisthospitals.com'
         recipient_list = [email]
 
         # Send the email with the HTML content
