@@ -103,6 +103,11 @@ REST_FRAMEWORK = {
 
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 15,  # Set default page size to 15 items
+
+    'DEFAULT_RENDERER_CLASSES': [
+    'rest_framework.renderers.JSONRenderer',
+    # 'rest_framework.renderers.BrowsableAPIRenderer',  # Optional: comment this out if you only want JSON responses
+    ],
 }
 
 
@@ -112,7 +117,6 @@ SIMPLE_JWT = {
     "SIGNING_KEY": SECRET_KEY,
     "AUTH_HEADER_TYPES": ("Bearer",),  # This requires 'Bearer' prefix in the header
 }
-
 
 
 
@@ -139,27 +143,27 @@ WSGI_APPLICATION = 'phone_tracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'swiftlookdb_5dud',
-        'USER': 'swiftlookdb_5dud_user',
-        'PASSWORD': 'HFUM7XjLnciljtFg9KELhWBDmYB0s6U1',
-        'HOST': 'dpg-csd2d6dumphs739c9dm0-a.oregon-postgres.render.com',
-        'PORT': '5432',  # default PostgreSQL port
-        'OPTIONS': {
-            'sslmode': 'require',  # Use SSL connection if required
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'swiftlookdb_5dud',
+#         'USER': 'swiftlookdb_5dud_user',
+#         'PASSWORD': 'HFUM7XjLnciljtFg9KELhWBDmYB0s6U1',
+#         'HOST': 'dpg-csd2d6dumphs739c9dm0-a.oregon-postgres.render.com',
+#         'PORT': '5432',  # default PostgreSQL port
+#         'OPTIONS': {
+#             'sslmode': 'require',  # Use SSL connection if required
+#         },
+#     }
+# }
 
 
 # Email settings for Hostinger
