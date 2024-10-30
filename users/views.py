@@ -73,36 +73,32 @@ class LoginView(generics.GenericAPIView):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def send_contact_email(request):
-    if request.method == 'POST':
-        email = request.data.get('email')
-        full_name = request.data.get('full_name')
-        phone_number = request.data.get('phone_number')
-        interest_service = request.data.get('interest_service')
-        message_body = request.data.get('message')
+    email = request.data.get('email')
+    full_name = request.data.get('full_name')
+    subject = request.data.get('subject')
+    message_body = request.data.get('message')
 
-        if email:
-            subject = 'Contact Form Submission'
-            message = f'''
-            <html>
-            <body>
-                <h3>Contact Form Submission</h3>
-                <p><strong>Full Name:</strong> {full_name}</p>
-                <p><strong>Email Address:</strong> {email}</p>
-                <p><strong>Phone Number:</strong> {phone_number}</p>
-                <p><strong>Interest Service:</strong> {interest_service}</p>
-                <p><strong>Message:</strong> {message_body}</p>
-            </body>
-            </html>
-            '''
-            recipient_list = ['ekehanson@gmail.com', 'ekenhanson@gmail.com', 'ekenehanson@gmail.com']
-            from_email = 'artstraining.co.uk@gmail.com'
-            send_mail(subject, '', from_email, recipient_list, fail_silently=False, html_message=message)
-            return Response({'message': 'Email sent successfully'})
-        else:
-            return Response({'error': 'Email not provided in POST data'}, status=400)
-    else:
-        return Response({'error': 'Invalid request method'}, status=400)
+    if email:
+        subject_line = f"New Contact Message: {subject}"
+        message = f'''
+        <html>
+        <body>
+            <h3>Contact Form Submission</h3>
+            <p><strong>Full Name:</strong> {full_name}</p>
+            <p><strong>Email Address:</strong> {email}</p>
+            <p><strong>Subject:</strong> {subject}</p>
+            <p><strong>Message:</strong> {message_body}</p>
+        </body>
+        </html>
+        '''
+        recipient_list = ['ekenehanson@gmail.com']
+        from_email = 'ekenehanson@sterlingspecialisthospitals.com'
 
+        send_mail(subject_line, '', from_email, recipient_list, fail_silently=False, html_message=message)
+        
+        return Response({'message': 'Email sent successfully'}, status=status.HTTP_200_OK)
+    
+    return Response({'error': 'Email not provided in POST data'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ResetPasswordView(views.APIView):
@@ -148,7 +144,6 @@ class ResetPasswordView(views.APIView):
         send_mail(subject, message, from_email, recipient_list, fail_silently=False, html_message=html_message)
 
         return Response({'message': 'Password reset link has been sent to your email'}, status=status.HTTP_200_OK)
-
 
 
 

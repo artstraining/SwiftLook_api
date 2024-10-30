@@ -143,6 +143,7 @@ WSGI_APPLICATION = 'phone_tracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -173,7 +174,7 @@ EMAIL_PORT = 465  # SSL port
 EMAIL_USE_SSL = True  # Use SSL for secure connection
 EMAIL_HOST_USER = 'ekenehanson@sterlingspecialisthospitals.com'  # Your Hostinger email address
 EMAIL_HOST_PASSWORD = '123@Qwertyqwerty@123'  # Your Hostinger email password
-DEFAULT_FROM_EMAIL = 'support@sterlingspecialisthospitals.com'  # Default sender email
+DEFAULT_FROM_EMAIL = 'ekenehanson@sterlingspecialisthospitals.com'  # Default sender email
 
 
 # # Email settings for GoDaddy
@@ -228,16 +229,12 @@ USE_I18N = True
 USE_TZ = True
 
 
-
-
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
